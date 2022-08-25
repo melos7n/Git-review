@@ -1,0 +1,108 @@
+[1mdiff --git a/src/test/java/Notes b/src/test/java/Notes[m
+[1mindex d689bf6..c9eb19a 100644[m
+[1m--- a/src/test/java/Notes[m
+[1m+++ b/src/test/java/Notes[m
+[36m@@ -24,6 +24,24 @@[m [mReview[m
+ [m
+         gitproject1 --> pom, src, target, .idea[m
+ [m
+[32m+[m[32m        5.where should u create your local git repository?[m
+[32m+[m[32m        ideally you should create you repo inside your working directory i.e in this case gitProject1[m
+[32m+[m[32m        Note:[m
+[32m+[m[32m        One repo for one single project[m
+[32m+[m[32m        No subRepos are advised[m
+[32m+[m[32m        ----------------------------------Tracking your first project using git----------------------[m
+[32m+[m[32m        1.Decide the location where to create the repository and navigate my MR terminal to that particular directory[m
+[32m+[m[32m        2.intitalize an empty repository  git init---> to initalize an empty repository[m
+[32m+[m[32m        to delete a repo, simply delete the .git folder[m
+[32m+[m[32m        3.git status--> shows u untacked files in red color[m
+[32m+[m[32m                    --> shows u the tracked files ingreen color[m
+[32m+[m[32m        4.git add . --> moves all the files to the staging area ..[m
+[32m+[m[32m        5. git commit -m "commit message" --> sends all the files from the staging area to the local repo[m
+[32m+[m[32m        6. git status after the commit shows working tree clean  becuase  we have[m
+[32m+[m[32m           all the threee stages i.e working directory , staging area and local repo synchronised[m
+[32m+[m
+[32m+[m
+[32m+[m
+    Where should I create my local git repository?[m
+     Don't create it in the src folder.[m
+ [m
+[36m@@ -68,8 +86,8 @@[m [mMethod two:[m
+ [m
+   git init creates a .git folder in the project folder[m
+ [m
+[31m-  now the first step with git init is that everything is sent to the staging area. In the staging area the code is not in[m
+[31m-  repository. meaning its not backed up.[m
+[32m+[m[32m  now the first step with git init is that everything is sent to the working directory. In the working directory[m
+[32m+[m[32m  the code is not in the repository. meaning its not backed up.[m
+ [m
+   next I have to see the status of the git by typing[m
+ [m
+[36m@@ -78,4 +96,53 @@[m [mMethod two:[m
+   if files are red that means the files are untracked[m
+   Tracked files show up green[m
+ [m
+[31m-    git add src[m
+[32m+[m[32m    git add .[m
+[32m+[m
+[32m+[m[32m  What this does is it moves the folders to the staging area. ( a snapshot/ picture of the files)[m
+[32m+[m
+[32m+[m[32m  we type[m
+[32m+[m[32m    git status[m
+[32m+[m[32m        which should show files in green meaning the files are tracked[m
+[32m+[m
+[32m+[m[32mSo now that have the files we want in the staging area and we're sure these are the files we want[m
+[32m+[m[32mto commit, then we can commit( make sure to label the commits properly)[m
+[32m+[m[32m To commit we type[m
+[32m+[m
+[32m+[m[32m    git commit -m "the uniue name of the commit"[m
+[32m+[m
+[32m+[m[32m    Commit name example[m
+[32m+[m[32m        git commit -m "temperature check basic code is there in the repo"[m
+[32m+[m
+[32m+[m[32mAfter git commit[m
+[32m+[m[32m    the files are moved from the staging area to the local repository[m
+[32m+[m
+[32m+[m[32mTo delete git just delete the folder[m
+[32m+[m
+[32m+[m[32m-----------------------------[m
+[32m+[m
+[32m+[m[32mNew git topics[m
+[32m+[m
+[32m+[m[32m    New git commands[m
+[32m+[m[32m        If I learn them it will make my life easier and help debugging code.[m
+[32m+[m
+[32m+[m[32mTo view the files in my staging area[m
+[32m+[m
+[32m+[m[32m        git ls-files[m
+[32m+[m
+[32m+[m[32mto remove any file from the staging area[m
+[32m+[m
+[32m+[m[32m        git rm --cached filename[m
+[32m+[m
+[32m+[m[32mWhat is[m
+[32m+[m[32m     git restore .[m
+[32m+[m
+[32m+[m[32m** Remember this command***[m
+[32m+[m[32m    Any updates in git lead to red untracked files when typing git status[m
+[32m+[m
+[32m+[m[32mto show all updates made in my code or notes I can type[m
+[32m+[m
+[32m+[m[32mgit diff[m
+[32m+[m
+[32m+[m[32mwith this gitbash will generate all modified updates[m
+[41m+[m
+[41m+[m
+[1mdiff --git a/src/test/java/class01/gitBasics.java b/src/test/java/class01/gitBasics.java[m
+[1mindex 77ea7d2..a5a42d7 100644[m
+[1m--- a/src/test/java/class01/gitBasics.java[m
+[1m+++ b/src/test/java/class01/gitBasics.java[m
+[36m@@ -6,7 +6,7 @@[m [mpublic class gitBasics {[m
+         // lets write a code that checks the rempature from a website and then prints[m
+         // out that it is a beautiful day or not[m
+ [m
+[31m-        System.out.println("today is a beautiful day");[m
+[32m+[m[32m        System.out.println("today is not a beautiful day");[m
+ [m
+ [m
+ [m
